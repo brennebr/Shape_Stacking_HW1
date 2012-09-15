@@ -27,6 +27,9 @@
     <ClCompile Include="..\..\..\..\Fall Semester %2712\CSE 274\Shape_Stacking_HW1\vc10\Rectangle.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\..\..\Fall Semester %2712\CSE 274\Shape_Stacking_HW1\vc10\Node.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\include\Resources.h">
@@ -39,6 +42,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="..\..\..\..\Fall Semester %2712\CSE 274\Shape_Stacking_HW1\vc10\Circle.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Fall Semester %2712\CSE 274\Shape_Stacking_HW1\vc10\Node.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

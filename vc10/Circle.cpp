@@ -12,6 +12,10 @@ Circle::Circle(float x_axis, float y_axis, float radius){
 	radius_ = radius;
 }
 
+/*void Circle::setX(float x){
+	x_ = x;
+}*/
+
 void Circle::draw(){
 	gl::drawSolidCircle(Vec2f(x_, y_), radius_);
 	gl::color(Color8u(100, 100, 100));

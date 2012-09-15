@@ -12,17 +12,26 @@ using namespace std;
 class Shape_Stacking_HW1App : public AppBasic {
   public:
 	void setup();
-	void mouseDown( MouseEvent event );	
+	void mouseDown( MouseEvent event );
+	void mouseUp( MouseEvent event );
 	void update();
 	void draw();
 	void prepareSettings(Settings* settings);
 
 private:
-	Circle* circle;
-	Ellipses* ellipse;
-	//Rectangle* rect;
+	Circle* circle_list_;
 	static const int kAppHeight = 600;
 	static const int kAppWidth = 800;
+
+
+	//x & y coordinates for mouse position
+	float y_pos_;
+	float x_pos_;
+
+	//position of circle
+	float x_pos_cir_;
+	float y_pos_cir_;
+	float radius;
 };
 
 /**Node class
@@ -54,20 +63,41 @@ void Shape_Stacking_HW1App::prepareSettings(Settings* settings){
 void Shape_Stacking_HW1App::setup()
 {
 	
+	x_pos_cir_ = 200;
+	y_pos_cir_ = 200;
+	circle_list_ = new Circle(x_pos_cir_, y_pos_cir_, 50);
 }
 
 void Shape_Stacking_HW1App::mouseDown( MouseEvent event )
 {
+	
+	x_pos_ = (float) event.getX();
+	y_pos_ = (float) event.getY();
+
+	if(x_pos_ >= x_pos_cir_-50 && x_pos_ <= x_pos_cir_+50 && y_pos_ >= y_pos_cir_-50 && y_pos_ <= y_pos_cir_+50){
+		gl::color(Color8u(200, 200, 200));
+	}
+}
+
+void Shape_Stacking_HW1App::mouseUp( MouseEvent event )
+{
+	x_pos_ = (float) event.getX();
+	y_pos_ = (float) event.getY();
+
+	//cir_cur_ = Circle(x_pos_, y_pos_, 50);
 }
 
 void Shape_Stacking_HW1App::update()
 {
+	Circle* cir_cur_ = circle_list_;
 }
 
 void Shape_Stacking_HW1App::draw()
 {
 	// clear out the window with black
 	gl::clear( Color( 0, 0, 0 ) ); 
+	Circle* cur_Cir = circle_list_;
+	cur_Cir->draw();
 }
 
 CINDER_APP_BASIC( Shape_Stacking_HW1App, RendererGl )
