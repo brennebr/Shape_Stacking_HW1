@@ -105,16 +105,12 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="..\..\..\..\Fall Semester %2712\CSE 274\Shape_Stacking_HW1\vc10\Circle.cpp" />
-    <ClCompile Include="..\..\..\..\Fall Semester %2712\CSE 274\Shape_Stacking_HW1\vc10\Ellipses.cpp" />
     <ClCompile Include="..\..\..\..\Fall Semester %2712\CSE 274\Shape_Stacking_HW1\vc10\Node.cpp" />
-    <ClCompile Include="..\..\..\..\Fall Semester %2712\CSE 274\Shape_Stacking_HW1\vc10\Rectangle.cpp" />
     <ClCompile Include="..\src\Shape_Stacking_HW1App.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\..\..\Fall Semester %2712\CSE 274\Shape_Stacking_HW1\vc10\Circle.h" />
-    <ClInclude Include="..\..\..\..\Fall Semester %2712\CSE 274\Shape_Stacking_HW1\vc10\Ellipses.h" />
     <ClInclude Include="..\..\..\..\Fall Semester %2712\CSE 274\Shape_Stacking_HW1\vc10\Node.h" />
-    <ClInclude Include="..\..\..\..\Fall Semester %2712\CSE 274\Shape_Stacking_HW1\vc10\Rectangle.h" />
     <ClInclude Include="..\include\Resources.h" />
   </ItemGroup>
   <ItemGroup>

@@ -12,5 +12,5 @@ public:
 
 	void setX(float x);
 	void setY(float y);
-	void draw();
+	void draw(float x, float y);
 };

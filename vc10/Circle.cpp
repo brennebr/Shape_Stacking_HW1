@@ -20,7 +20,9 @@ void Circle::setY(float y){
 	y_ = y;
 }
 
-void Circle::draw(){
+void Circle::draw(float x, float y){
+	x_ = x;
+	y_ = y;
 	gl::drawSolidCircle(Vec2f(x_, y_), radius_);
 	gl::color(Color8u(100, 100, 100));
 }
