@@ -12,9 +12,13 @@ Circle::Circle(float x_axis, float y_axis, float radius){
 	radius_ = radius;
 }
 
-/*void Circle::setX(float x){
+void Circle::setX(float x){
 	x_ = x;
-}*/
+}
+
+void Circle::setY(float y){
+	y_ = y;
+}
 
 void Circle::draw(){
 	gl::drawSolidCircle(Vec2f(x_, y_), radius_);

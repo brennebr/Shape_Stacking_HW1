@@ -10,6 +10,7 @@ public:
 	float y_;
 	float radius_;
 
-//	void setX*();
+	void setX(float x);
+	void setY(float y);
 	void draw();
 };

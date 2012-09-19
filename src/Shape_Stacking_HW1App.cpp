@@ -2,8 +2,8 @@
 #include "cinder/app/AppBasic.h"
 #include "cinder/gl/gl.h"
 #include "../vc10/Circle.h"
-#include "../vc10/Ellipses.h"
-#include "../vc10/Rectangle.h"
+//#include "../vc10/Ellipses.h"
+//#include "../vc10/Rectangle.h"
 
 using namespace ci;
 using namespace ci::app;
@@ -19,7 +19,7 @@ class Shape_Stacking_HW1App : public AppBasic {
 	void prepareSettings(Settings* settings);
 
 private:
-	Circle* circle_list_;
+	Circle* circle_list_, cur_cir_;
 	static const int kAppHeight = 600;
 	static const int kAppWidth = 800;
 
@@ -32,6 +32,9 @@ private:
 	float x_pos_cir_;
 	float y_pos_cir_;
 	float radius;
+
+	//Node* sentinel_;
+	bool isInCircle_;
 };
 
 /**Node class
@@ -62,10 +65,11 @@ void Shape_Stacking_HW1App::prepareSettings(Settings* settings){
 
 void Shape_Stacking_HW1App::setup()
 {
-	
 	x_pos_cir_ = 200;
 	y_pos_cir_ = 200;
 	circle_list_ = new Circle(x_pos_cir_, y_pos_cir_, 50);
+	//sentinel_ = new Node();
+	isInCircle_ = false;
 }
 
 void Shape_Stacking_HW1App::mouseDown( MouseEvent event )
@@ -74,22 +78,28 @@ void Shape_Stacking_HW1App::mouseDown( MouseEvent event )
 	x_pos_ = (float) event.getX();
 	y_pos_ = (float) event.getY();
 
-	if(x_pos_ >= x_pos_cir_-50 && x_pos_ <= x_pos_cir_+50 && y_pos_ >= y_pos_cir_-50 && y_pos_ <= y_pos_cir_+50){
-		gl::color(Color8u(200, 200, 200));
+	if(x_pos_ >= x_pos_cir_-50 && x_pos_ <= x_pos_cir_+50 && y_pos_ >= y_pos_cir_-50 && y_pos_ <= y_pos_cir_+50)
+	{
+		isInCircle_ = true;
 	}
 }
 
 void Shape_Stacking_HW1App::mouseUp( MouseEvent event )
 {
-	x_pos_ = (float) event.getX();
-	y_pos_ = (float) event.getY();
-
-	//cir_cur_ = Circle(x_pos_, y_pos_, 50);
+	if(isInCircle_){
+		x_pos_ = (float) event.getX();
+		y_pos_ = (float) event.getY();
+		Circle cur_ = *circle_list_;
+		cur_.setY(y_pos_);
+		cur_.setX(x_pos_);
+	}
+	
 }
 
 void Shape_Stacking_HW1App::update()
 {
 	Circle* cir_cur_ = circle_list_;
+
 }
 
 void Shape_Stacking_HW1App::draw()
